@@ -3785,3 +3785,23 @@ select {
     cursor: pointer !important;
   }
 }
+
+/* Reduce only the brand title font size on mobile screens */
+@media (max-width: 768px) {
+  .site-header .brand-title {
+    font-size: 1.5rem !important; /* Adjust between 1.3rem - 1.6rem to your preference */
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+
+  .site-header .brand-tagline {
+    font-size: 0.45rem !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Ensure all header icons remain visible */
+  .site-header .nav-actions a[href="tracking.html"],
+  .site-header .nav-actions a[href="login.html"] {
+    display: flex !important;
+  }
+}
