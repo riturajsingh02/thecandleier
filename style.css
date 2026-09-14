@@ -3805,3 +3805,49 @@ select {
     display: flex !important;
   }
 }
+
+
+/* =========================================================
+   COMPACT BUTTON SIZING FOR SMARTPHONES & SMALL SCREENS
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Scale down general button padding, font size, and letter spacing */
+  .btn,
+  .btn-gold,
+  .btn-outline {
+    padding: 0.65rem 1.4rem !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 1px !important;
+    gap: 6px !important;
+    border-radius: 3px !important;
+  }
+
+  /* Compact button layout in the Welcome Hero section */
+  .hero-actions {
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important; /* Neatly stacks with equal width on phones */
+    padding: 0.7rem 1.2rem !important;
+  }
+
+  /* Compact buttons in Home Décor and Editorial Journal banners */
+  .banner-content .btn {
+    padding: 0.65rem 1.3rem !important;
+    font-size: 0.72rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn,
+  .btn-gold,
+  .btn-outline {
+    padding: 0.55rem 1.1rem !important;
+    font-size: 0.66rem !important;
+    letter-spacing: 0.8px !important;
+  }
+}
