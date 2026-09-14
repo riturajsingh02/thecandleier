@@ -3592,3 +3592,72 @@ select {
     font-size: 0.75rem;
   }
 }
+
+/* =========================================================
+   VISUAL CATEGORY ROW: SMARTPHONE ALIGNMENT & SCROLL
+   ========================================================= */
+@media (max-width: 768px) {
+  .visual-category-row {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Keeps icons in one seamless row */
+    overflow-x: auto !important; /* Enables smooth finger swipe */
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 1.1rem !important;
+    padding: 0.5rem 1rem 1.2rem !important;
+    margin-inline: -1rem !important; /* Extends to screen edges for clean bleeding */
+    -webkit-overflow-scrolling: touch !important; /* iOS momentum scrolling */
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important; /* Hides scrollbar on Firefox */
+  }
+
+  .visual-category-row::-webkit-scrollbar {
+    display: none !important; /* Hides scrollbar on Chrome/Safari/iOS */
+  }
+
+  .visual-cat-btn {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex: 0 0 74px !important; /* Fixed uniform width so every icon is identical */
+    width: 74px !important;
+    gap: 7px !important;
+    scroll-snap-align: start !important;
+    text-align: center !important;
+  }
+
+  .visual-img-wrap {
+    width: 66px !important;
+    height: 66px !important;
+    min-width: 66px !important;
+    min-height: 66px !important;
+    border-radius: 50% !important;
+    padding: 3px !important;
+    background: #FFFFFF !important;
+    border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .visual-img-wrap img {
+    border-radius: 50% !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .visual-cat-btn span {
+    font-size: 0.65rem !important;
+    line-height: 1.2 !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    color: var(--text-dark) !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important; /* Caps label to 2 balanced lines */
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    height: 24px !important; /* Equal height baseline across all items */
+  }
+}
+
