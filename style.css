@@ -2008,6 +2008,77 @@ img {
   display: none;
 }
 
+/* =========================================================
+   LUXURY REFRESH — catalog, forms, tracking and responsive UI
+   ========================================================= */
+:root {
+  --ink: #241519;
+  --wine: #541018;
+  --wine-deep: #2b050b;
+  --champagne: #f7e8b0;
+  --paper: #fffaf4;
+  --line: rgba(84, 16, 24, .15);
+}
+
+body { background: var(--paper); color: var(--ink); font-family: var(--font-serif); }
+body::selection { background: var(--gold-primary); color: var(--wine-deep); }
+
+.site-header { background: rgba(255,250,244,.96); border-bottom: 1px solid var(--line); box-shadow: 0 8px 28px rgba(43,5,11,.06); }
+.nav-links a, .action-btn { color: var(--wine); }
+.nav-links a:hover { color: var(--gold-dark); }
+.brand-title, .mobile-brand-title { color: var(--wine); text-shadow: none; }
+.brand-tagline, .mobile-brand-sub { color: var(--text-muted); letter-spacing: 3px; }
+
+.catalog-section { padding: clamp(4rem, 8vw, 8rem) 5%; background: var(--paper); }
+.catalog-section::before { content: 'THE COLLECTION'; display: block; color: var(--gold-dark); font-family: var(--font-sans); font-size: .7rem; font-weight: 700; letter-spacing: .32em; margin-bottom: .7rem; }
+.category-heading { font-size: clamp(2.6rem, 5vw, 4.8rem); font-weight: 500; letter-spacing: -.03em; }
+.catalog-toolbar, .pro-toolbar { border-color: var(--line); }
+.product-grid { gap: clamp(1.2rem, 2.2vw, 2rem); }
+.product-card { background: #fff; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; box-shadow: 0 10px 30px rgba(43,5,11,.06); transition: transform .35s ease, box-shadow .35s ease; }
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 18px 42px rgba(43,5,11,.14); }
+.card-media { background: linear-gradient(145deg, #f7eee5, #ead8cf); aspect-ratio: 1 / 1.08; }
+.card-media img { mix-blend-mode: multiply; }
+.card-badge { background: var(--wine); color: var(--champagne); border-radius: 0; font-family: var(--font-sans); letter-spacing: .14em; }
+.card-body { padding: 1.25rem; }
+.card-title { color: var(--wine); font-size: 1.35rem; line-height: 1.12; min-height: 3em; }
+.card-price { color: var(--wine); font-family: var(--font-sans); font-size: .95rem; font-weight: 700; }
+.btn-add-cart { background: var(--wine); color: var(--champagne); width: 2.5rem; height: 2.5rem; border-radius: 50%; font-size: 1.4rem; transition: background .2s ease, transform .2s ease; }
+.btn-add-cart:hover { background: var(--gold-dark); transform: rotate(90deg); }
+.visual-category-row { gap: 2.4rem; }
+.visual-img-wrap { border-color: var(--gold-primary); background: #fff; box-shadow: 0 8px 24px rgba(43,5,11,.08); }
+.visual-cat-btn span { color: var(--wine); font-family: var(--font-sans); font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
+.filter-dropdown-btn, .sort-select, .search-wrap-small input { background: #fffaf4; border-color: var(--line); color: var(--wine); }
+
+.auth-page, .tracking-page { background: radial-gradient(circle at top right, rgba(212,175,55,.12), transparent 35%), var(--paper); }
+.auth-card, .tracking-card { border: 1px solid var(--line); border-radius: 2px; box-shadow: 0 22px 60px rgba(43,5,11,.12); background: rgba(255,255,255,.86); }
+.auth-card h1, .tracking-card h1 { color: var(--wine); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; }
+.auth-card input, .tracking-card input { background: #fffaf4; border: 1px solid var(--line); border-radius: 0; }
+.auth-card input:focus, .tracking-card input:focus { border-color: var(--gold-dark); box-shadow: 0 0 0 3px rgba(212,175,55,.15); }
+.btn-primary, .auth-card button, .tracking-card button { background: var(--wine); color: var(--champagne); border-radius: 0; letter-spacing: .14em; text-transform: uppercase; }
+.btn-primary:hover, .auth-card button:hover, .tracking-card button:hover { background: var(--gold-dark); }
+
+footer, .site-footer { background: var(--wine-deep); color: var(--paper); border-top: 1px solid var(--gold-dark); }
+footer a, .site-footer a { color: rgba(255,250,244,.72); }
+footer a:hover, .site-footer a:hover { color: var(--champagne); }
+
+@media (max-width: 768px) {
+  .site-header { padding: .9rem 5%; }
+  .nav-center { display: none; }
+  .nav-actions { gap: .35rem; }
+  .action-btn { width: 2.35rem; height: 2.35rem; }
+  .catalog-section { padding-top: 3rem; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+  .card-body { padding: .8rem; }
+  .card-title { font-size: 1.05rem; }
+  .card-price { font-size: .78rem; }
+  .btn-add-cart { width: 2.1rem; height: 2.1rem; }
+  .auth-card, .tracking-card { margin: 1rem; padding: 1.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
 .payment-card.selected {
   border-color: var(--maroon-light);
   background: var(--maroon-wash);
