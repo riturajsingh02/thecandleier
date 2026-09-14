@@ -3661,3 +3661,127 @@ select {
   }
 }
 
+/* =========================================================
+   CANDLE COLLECTION TOOLBAR & FILTER ALIGNMENT (MOBILE)
+   ========================================================= */
+@media (max-width: 768px) {
+  .pro-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .toolbar-left {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    width: 100% !important;
+  }
+
+  .toolbar-left .category-heading {
+    font-size: 1.5rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .toolbar-left .product-count {
+    font-size: 0.75rem !important;
+    color: var(--text-muted) !important;
+  }
+
+  .toolbar-right {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+  }
+
+  /* 1. Full-width Search Bar */
+  .search-wrap-small {
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .search-wrap-small input {
+    width: 100% !important;
+    height: 38px !important;
+    padding: 0 1rem 0 2.4rem !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 6px !important;
+    font-size: 0.8rem !important;
+    background: #FFFFFF !important;
+    outline: none !important;
+  }
+
+  .search-wrap-small svg {
+    position: absolute !important;
+    left: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  /* 2. Three Equal-Width Filter Buttons (Category, Fragrance, Price) */
+  .pro-filters {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .filter-dropdown {
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .filter-dropdown-btn {
+    width: 100% !important;
+    height: 36px !important;
+    padding: 0 4px !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.5px !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    white-space: nowrap !important;
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
+  }
+
+  .filter-dropdown-btn .arrow {
+    font-size: 0.55rem !important;
+  }
+
+  /* Dropdown popup containment */
+  .filter-menu {
+    position: absolute !important;
+    top: calc(100% + 6px) !important;
+    left: 0 !important;
+    min-width: 220px !important;
+    max-width: 280px !important;
+    z-index: 1000 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  /* Anchors the Price dropdown from the right edge so it never clips off-screen */
+  .pro-filters .filter-dropdown:last-child .filter-menu {
+    left: auto !important;
+    right: 0 !important;
+  }
+
+  /* 3. Full-width Sort Selection */
+  .sort-wrap {
+    width: 100% !important;
+  }
+
+  .sort-select {
+    width: 100% !important;
+    height: 36px !important;
+    padding: 0 1rem !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 6px !important;
+    font-size: 0.78rem !important;
+    background: #FFFFFF !important;
+    color: var(--text-dark) !important;
+    cursor: pointer !important;
+  }
+}
