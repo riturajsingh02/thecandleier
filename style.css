@@ -3851,3 +3851,28 @@ select {
     letter-spacing: 0.8px !important;
   }
 }
+
+
+/* =========================================================
+   FOOTER LOGO FONT FIX FOR SMARTPHONES & IPHONES
+   ========================================================= */
+.site-footer .footer-logo,
+.footer-logo {
+  font-family: 'Monsieur La Doulaise', cursive !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-synthesis: none !important; /* Prevents mobile browsers from faking bold with system fonts */
+  -webkit-font-smoothing: antialiased !important;
+  -webkit-text-stroke: 0 !important;
+  color: var(--gold-primary) !important;
+  line-height: 1.2 !important;
+}
+
+@media (max-width: 768px) {
+  .site-footer .footer-logo,
+  .footer-logo {
+    font-size: 2.5rem !important; /* Scales down from 3.6rem so it doesn't wrap awkwardly */
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
