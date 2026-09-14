@@ -15,7 +15,10 @@
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);
   overflow: hidden; 
 } */
- .announcement-bar {
+ /* =========================================================
+   ANNOUNCEMENT BAR (TICKER FIX FOR ALL MOBILES)
+   ========================================================= */
+.announcement-bar {
   background-color: var(--cabernet-dark);
   color: #FAF6F0;
   padding: 0.55rem 5%;
@@ -29,47 +32,54 @@
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);
   position: relative;
   z-index: 490;
+  overflow: hidden; /* Clips scrolling text inside the bar */
+  width: 100%;
 }
-
 
 .announcement-left {
   display: flex;
   gap: 2.2rem;
+  align-items: center;
 }
 
 .announcement-left span {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  white-space: nowrap; /* Prevents text from wrapping into multiple lines */
+  white-space: nowrap;
+  flex-shrink: 0; /* Prevents text from squishing */
 }
 
 /* Mobile Ticker Animation (Screens 768px and below) */
 @media (max-width: 768px) {
   .announcement-bar {
     justify-content: flex-start;
-    padding-inline: 0;
-  }
-  .announcement-left {
-    animation: tickerScroll 28s linear infinite; /* Increase the seconds (e.g., from 18s to 28s) to make it slower */
+    padding: 0.55rem 0;
+    overflow: hidden;
   }
 
   .announcement-right {
-    display: none; /* Hide desktop-only right text to save mobile space */
+    display: none;
   }
 
   .announcement-left {
     display: flex;
-    width: 100%;
-    gap: 3rem;
-    animation: tickerScroll 18s linear infinite; /* Adjust speed by changing seconds */
+    width: max-content; /* Gives full natural space to avoid collisions */
+    gap: 4rem;
+    animation: tickerScroll 24s linear infinite;
     white-space: nowrap;
+    will-change: transform;
   }
 
-  /* Keyframe animation to move text smoothly from right to left */
+  .announcement-left span {
+    flex-shrink: 0;
+    white-space: nowrap;
+    display: inline-flex;
+  }
+
   @keyframes tickerScroll {
     0% {
-      transform: translateX(100%);
+      transform: translateX(100vw);
     }
     100% {
       transform: translateX(-100%);
