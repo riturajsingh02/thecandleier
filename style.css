@@ -3876,3 +3876,88 @@ select {
     margin-bottom: 0.5rem !important;
   }
 }
+
+/* =========================================================
+   PERFECTLY BALANCED HERO DIVIDER LEAF & GOLD LINE (MOBILE)
+   ========================================================= */
+.hero-divider-group {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  flex-wrap: nowrap !important;
+  margin-inline: auto !important;
+  width: 100% !important;
+}
+
+/* Force both gold lines to have identical width and never compress */
+.hero-divider-group .divider-line-gold {
+  flex: 0 0 28px !important;
+  width: 28px !important;
+  height: 1px !important;
+  flex-shrink: 0 !important;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent) !important;
+}
+
+/* Force both leaves to have identical font size and baseline */
+.hero-divider-group .divider-leaf {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  flex-shrink: 0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1 !important;
+  color: var(--gold-primary) !important;
+}
+
+/* Mirror the right leaf so both sides are 100% identical in size and shape */
+.hero-divider-group .divider-leaf.leaf-right,
+.hero-divider-group .divider-leaf:last-of-type {
+  transform: scaleX(-1) !important;
+}
+
+.hero-divider-group .hero-tagline {
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+/* Smartphone Adjustments (480px and below) */
+@media (max-width: 480px) {
+  .hero-divider-group {
+    gap: 6px !important;
+  }
+
+  .hero-divider-group .divider-line-gold {
+    flex: 0 0 20px !important;
+    width: 20px !important;
+  }
+
+  .hero-divider-group .divider-leaf {
+    font-size: 0.85rem !important;
+  }
+
+  .hero-divider-group .hero-tagline {
+    font-size: 0.8rem !important;
+    letter-spacing: 1.5px !important;
+  }
+}
+
+/* Ultra-compact screens (360px and below) */
+@media (max-width: 360px) {
+  .hero-divider-group .divider-line-gold {
+    flex: 0 0 14px !important;
+    width: 14px !important;
+  }
+
+  .hero-divider-group .divider-leaf {
+    font-size: 0.75rem !important;
+  }
+
+  .hero-divider-group .hero-tagline {
+    font-size: 0.72rem !important;
+    letter-spacing: 1px !important;
+  }
+}
